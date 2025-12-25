@@ -6,10 +6,27 @@ void main() {
     String nome = sc.nextLine();
     System.out.print("preço: ");
     double preco = sc.nextDouble();
-    System.out.print("quantidade: ");
-    int quantidade = sc.nextInt();
+    System.out.println("Há quantidade no estoque?");
+    boolean s = sc.nextBoolean();
 
-    Produto produto = new Produto(nome,preco,quantidade);
+    if (s == true){
+        System.out.print("Quantidade: ");
+        int quantidade = sc.nextInt();
+        Produto produto = new Produto(nome,preco,quantidade);
+        System.out.println("dados do produto: "+ produto);
+        System.out.print("adicione mais quanidade do produto: ");
+        int add = sc.nextInt();
+
+        produto.adicionar(add);
+        System.out.println("dados do produto: "+produto);
+        System.out.print("remova quanidade do produto: ");
+        int rem = sc.nextInt();
+
+        produto.remover(rem);
+        System.out.println("dados do produto: "+produto);
+        System.exit(0);
+    }
+        Produto produto = new Produto(nome, preco);
 
     System.out.println("dados do produto: "+ produto);
     System.out.print("adicione mais quanidade do produto: ");

@@ -9,6 +9,11 @@ public class Produto {
         this.quantidade = quantidade; 
     }
 
+    public Produto(String nome, double preco){
+        this.nome = nome;
+        this.preco = preco;
+    }
+
     public double totalValor(){
         return quantidade*preco;
     }
@@ -21,9 +26,9 @@ public class Produto {
 
     @Override
     public String toString() {
-        return nome + ", $ "
-                +String.format("%2f", preco)
+        return nome + ", $"
+                +String.format("%.2f", preco)
                 +", "+quantidade+" unidades, total : "+
-                String.format("%2f", totalValor());
+                String.format("%.2f", totalValor());
     }
 }
